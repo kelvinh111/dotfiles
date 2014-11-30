@@ -85,6 +85,8 @@ Plugin 'mbbill/undotree'
 Plugin 'gregsexton/gitv'
 Plugin 'tpope/vim-fugitive'
 Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+Plugin 'vim-scripts/tlib'
 
 " dunno..
 Plugin 'spf13/vim-preview'
