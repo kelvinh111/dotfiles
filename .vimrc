@@ -1,11 +1,12 @@
 set nocompatible
 filetype off                  " required
-
+let $LANG="zh_TW.UTF-8"
+set langmenu=zh_tw.utf-8
+set encoding=utf8
 
 if has("gui_running")
     " GVIM
     if has("gui_win32")
-
         source $VIMRUNTIME/vimrc_example.vim
         source $VIMRUNTIME/mswin.vim
         behave mswin
@@ -396,6 +397,7 @@ silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
 
 " easymotion
 map <Leader><Leader> <Plug>(easymotion-prefix)
+nmap s <Plug>(easymotion-s)
 
 " indentLint
 let g:indentLine_color_term = 239
