@@ -62,6 +62,7 @@ Plugin 'mattn/emmet-vim'
 Plugin 'godlygeek/tabular'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'FredKSchott/CoVim'
+Plugin 'dkprice/vim-easygrep'
 
 " auto help
 Plugin 'tpope/vim-endwise'
@@ -139,9 +140,9 @@ filetype on
 syntax on                                     " enable syntax processing
 set mouse=
 scriptencoding utf-8
-set background=dark
 set t_Co=256
-colorscheme elive
+set background=dark
+colorscheme molokai
 " highlight CursorLine ctermbg=235 ctermfg=NONE
 set ruler                                         " show the line number on the bar
 set number                                        " show line numbers
@@ -237,6 +238,8 @@ set showmatch                                     " show matching bracket
 set diffopt=filler,iwhite                         " ignore all whitespace and sync
 
 " Backups
+set nobackup
+set nowritebackup
 " set backup
 " set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 " set backupskip=/tmp/*,/private/tmp/*
@@ -290,7 +293,14 @@ map - <c-w><
 nmap <leader>v :tabedit $MYVIMRC<CR>
 
 " remove all ^M
-noremap <Leader>m :%s///g''
+if has("gui_running")
+    if has("gui_win32")
+        noremap <Leader>m :%s/\r\(\n\)/\1/g<CR><C-o>
+    endif
+else
+    noremap <Leader>m :%s///g''
+endif
+
 " code reformatting
 noremap <Leader>r gg=G''
 
@@ -408,5 +418,4 @@ nmap s <Plug>(easymotion-s)
 let g:indentLine_color_term = 239
 let g:indentLine_color_tty_light = 7
 let g:indentLine_color_dark = 1
-
 " }}}
