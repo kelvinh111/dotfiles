@@ -63,6 +63,8 @@ Plugin 'godlygeek/tabular'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'FredKSchott/CoVim'
 Plugin 'dkprice/vim-easygrep'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'tpope/vim-abolish'
 
 " auto help
 Plugin 'tpope/vim-endwise'
@@ -78,7 +80,6 @@ Plugin 'Yggdroot/indentLine'
 
 " not yet learned
 Plugin 'kien/ctrlp.vim'
-Plugin 'terryma/vim-multiple-cursors'
 Plugin 'kana/vim-textobj-user'
 Plugin 'marcweber/vim-addon-mw-utils'
 Plugin 'rking/ag.vim'
@@ -93,13 +94,14 @@ Plugin 'vim-scripts/tlib'
 
 " dunno..
 Plugin 'spf13/vim-preview'
+Plugin 'uguu-org/vim-matrix-screensaver'
 
 " language support
 Plugin 'arnaud-lb/vim-php-namespace'
 Plugin 'elzr/vim-json'
 Plugin 'groenewege/vim-less'
 Plugin 'pangloss/vim-javascript'
-Plugin 'kchmck/vim-coffee-script'
+Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'tpope/vim-haml'
 Plugin 'digitaltoad/vim-jade'
@@ -130,6 +132,9 @@ Plugin 'yearofmoo/Vim-Darkmate'
 Plugin 'ciaranm/inkpot'
 Plugin 'herald.vim'
 Plugin 'reidab/cool_glow'
+Plugin 'candy.vim'
+Plugin 'tpope/vim-vividchalk'
+Plugin 'YorickPeterse/Autumn.vim'
 
 
 " Config {{{
@@ -142,7 +147,7 @@ set mouse=
 scriptencoding utf-8
 set t_Co=256
 set background=dark
-colorscheme molokai
+colorscheme atom
 " highlight CursorLine ctermbg=235 ctermfg=NONE
 set ruler                                         " show the line number on the bar
 set number                                        " show line numbers
@@ -167,7 +172,7 @@ set clipboard=unnamed
 set history=1000                                  " remember more commands and search history
 set undolevels=1000                               " use many muchos levels of undo
 set updatecount=100                               " switch every 100 chars
-" set complete=.,w,b,u,U,t,i,d                      " do lots of scanning on tab completion
+set complete=.,w,b,u,U,t,i,d                      " do lots of scanning on tab completion
 set title                                         " change the terminal's title
 set noerrorbells                                  " don't beep    
 set visualbell t_vb=                              " and don't make faces
@@ -259,7 +264,8 @@ endif
 
 " Key (re)mapping {{{
 let mapleader=","
-inoremap jk <esc>
+" inoremap jk <esc>
+inoremap jl <esc> :w <cr>
 
 " disable arrow keys
 inoremap  <Up>     <NOP>
@@ -325,7 +331,7 @@ let NERDTreeDirArrows = 1
 let NERDTreeChDirMode = 3
 let g:NERDTreeWinSize = 30
 let NERDTreeShowHidden = 1
-let g:nerdtree_tabs_open_on_console_startup=1
+let g:nerdtree_tabs_open_on_console_startup = 0
 let g:nerdtree_tabs_focus_on_files = 1
 map <leader>n <plug>NERDTreeTabsToggle<CR>
 
@@ -344,6 +350,7 @@ endif
 " CtrlP
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
 
 " youcompleteme
 let g:clang_library_path='/root/.vim/bundle/YouCompleteMe/python/libclang.so'
@@ -418,4 +425,13 @@ nmap s <Plug>(easymotion-s)
 let g:indentLine_color_term = 239
 let g:indentLine_color_tty_light = 7
 let g:indentLine_color_dark = 1
+
+let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_next_key='<C-n>'
+let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
+
+" emmet
+map <C-e>  <C-y>,
 " }}}
