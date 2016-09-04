@@ -77,6 +77,7 @@ Plugin 'bling/vim-airline'
 Plugin 'scrooloose/syntastic'
 Plugin 'gorodinskiy/vim-coloresque'
 Plugin 'Yggdroot/indentLine'
+" Plugin 'nathanaelkane/vim-indent-guides'
 
 " not yet learned
 Plugin 'kien/ctrlp.vim'
@@ -95,6 +96,7 @@ Plugin 'vim-scripts/tlib'
 " dunno..
 Plugin 'spf13/vim-preview'
 Plugin 'uguu-org/vim-matrix-screensaver'
+Plugin 'zyedidia/vim-snake'
 
 " language support
 Plugin 'arnaud-lb/vim-php-namespace'
@@ -135,6 +137,10 @@ Plugin 'reidab/cool_glow'
 Plugin 'candy.vim'
 Plugin 'tpope/vim-vividchalk'
 Plugin 'YorickPeterse/Autumn.vim'
+Plugin 'bcicen/vim-vice'
+Plugin 'dracula/vim' 
+Plugin 'aereal/vim-colors-japanesque' 
+Plugin 'raphamorim/lucario'
 
 
 " Config {{{
@@ -143,11 +149,14 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 filetype on
 syntax on                                     " enable syntax processing
-set mouse=
+" set mouse=
 scriptencoding utf-8
 set t_Co=256
 set background=dark
-colorscheme atom
+colorscheme dracula
+" colorscheme lucario
+" colorscheme japanesque
+
 " highlight CursorLine ctermbg=235 ctermfg=NONE
 set ruler                                         " show the line number on the bar
 set number                                        " show line numbers
@@ -264,8 +273,10 @@ endif
 
 " Key (re)mapping {{{
 let mapleader=","
-" inoremap jk <esc>
-inoremap jl <esc> :w <cr>
+
+" fast save file
+inoremap <leader>; <esc> :w <cr>
+noremap <leader>; <esc> :w <cr>
 
 " disable arrow keys
 inoremap  <Up>     <NOP>
@@ -309,9 +320,6 @@ endif
 
 " code reformatting
 noremap <Leader>r gg=G''
-
-" fast save file
-" noremap l; :w<CR>
 
 " }}}
 
@@ -425,6 +433,10 @@ nmap s <Plug>(easymotion-s)
 let g:indentLine_color_term = 239
 let g:indentLine_color_tty_light = 7
 let g:indentLine_color_dark = 1
+
+" vim-indent-guides
+" let g:indent_guides_start_level = 2
+" let g:indent_guides_guide_size = 1
 
 let g:multi_cursor_use_default_mapping=0
 let g:multi_cursor_next_key='<C-n>'
