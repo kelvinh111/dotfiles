@@ -119,28 +119,12 @@ Plugin 'cakebaker/scss-syntax.vim'
 " Plugin 'pythoncomplete'
 
 " colorscheme
-Plugin 'flazz/vim-colorschemes'
-Plugin 'sjl/badwolf'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'tomasr/molokai'
-Plugin 'zaiste/Atom'
-Plugin 'w0ng/vim-hybrid'
-Plugin 'chriskempson/base16-vim'
-Plugin 'Elive/vim-colorscheme-elive'
-Plugin 'zeis/vim-kolor'
-Plugin 'spf13/vim-colors'
-Plugin 'croaker/mustang-vim'
-Plugin 'yearofmoo/Vim-Darkmate'
-Plugin 'ciaranm/inkpot'
-Plugin 'herald.vim'
-Plugin 'reidab/cool_glow'
 Plugin 'candy.vim'
-Plugin 'tpope/vim-vividchalk'
-Plugin 'YorickPeterse/Autumn.vim'
-Plugin 'bcicen/vim-vice'
 Plugin 'dracula/vim' 
-Plugin 'aereal/vim-colors-japanesque' 
-Plugin 'raphamorim/lucario'
+Plugin 'jacoborus/tender.vim'
+Plugin 'mbbill/vim-seattle'
+Plugin 'sonjapeterson/1989.vim'
+Plugin 'vim-scripts/sift'
 
 
 " Config {{{
@@ -154,10 +138,15 @@ scriptencoding utf-8
 set t_Co=256
 set background=dark
 colorscheme dracula
-" colorscheme lucario
-" colorscheme japanesque
+" colorscheme tender
+colorscheme seattle
 
-" highlight CursorLine ctermbg=235 ctermfg=NONE
+highlight CursorLine ctermbg=235 ctermfg=NONE
+highlight Visual ctermbg=57
+highlight Normal ctermbg=NONE
+highlight nonText ctermbg=NONE
+highlight Comment ctermbg=NONE
+highlight LineNr ctermbg=NONE ctermfg=63
 set ruler                                         " show the line number on the bar
 set number                                        " show line numbers
 set showcmd                                       " show command in bottom bar
